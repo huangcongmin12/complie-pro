@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * 单词类
+ * 
+ * @author HCM
  */
 public class Word {
 	public final static String KEY = "关键字";
@@ -15,43 +17,42 @@ public class Word {
 	public final static String BOUNDARYSIGN = "界符";
 	public final static String END = "结束符";
 	public final static String UNIDEF = "未知类型";
-	
+
 	/**
 	 * 关键字集合
 	 */
-	public static ArrayList<String> key = new ArrayList<String>(); 
-	
+	public static ArrayList<String> key = new ArrayList<String>();
+
 	/**
-	 *  界符集合
+	 * 界符集合
 	 */
-	public static ArrayList<String> boundarySign = new ArrayList<String>(); 
-	
+	public static ArrayList<String> boundarySign = new ArrayList<String>();
+
 	/**
-	 *  运算符集合
+	 * 运算符集合
 	 */
-	public static ArrayList<String> operator = new ArrayList<String>(); 
+	public static ArrayList<String> operator = new ArrayList<String>();
 
 	/**
 	 * 单词编号
 	 */
 	public int id;
-	
-	
+
 	/**
 	 * 单词的值
 	 */
 	public String value;
-	
+
 	/**
 	 * 单词类型
 	 */
 	public String type;
-	
+
 	/**
 	 * 单词所在行
 	 */
 	public int line;
-	
+
 	public boolean flag = true;
 
 	static {

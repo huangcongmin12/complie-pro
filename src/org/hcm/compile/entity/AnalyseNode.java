@@ -4,15 +4,17 @@ import java.util.ArrayList;
 
 /**
  * 分析栈节点类
+ * 
+ * @author HCM
  */
 public class AnalyseNode {
 	public final static String NONTERMINAL = "非终结符";
 	public final static String TERMINAL = "终结符";
 	public final static String ACTIONSIGN = "动作符";
 	public final static String END = "结束符";
-	
-	static ArrayList<String> nonterminal = new ArrayList<String>();	// 非终结符集合
-	static ArrayList<String> actionSign = new ArrayList<String>();	// 动作符集合
+
+	static ArrayList<String> nonterminal = new ArrayList<String>(); // 非终结符集合
+	static ArrayList<String> actionSign = new ArrayList<String>();  // 动作符集合
 	static {
 		// N:S,B,A,C,,X,R,Z,Z’,U,U’,E,E’,H,H’,G,M,D,L,L’,T,T’,F,O,P,Q
 		nonterminal.add("S");
@@ -41,12 +43,12 @@ public class AnalyseNode {
 		nonterminal.add("L'");
 		nonterminal.add("T");
 		nonterminal.add("T'");
-		actionSign.add("@ADD_SUB"); // 
-		actionSign.add("@ADD");     //
-		actionSign.add("@SUB");     // 
+		actionSign.add("@ADD_SUB"); 
+		actionSign.add("@ADD"); 
+		actionSign.add("@SUB"); 
 		actionSign.add("@DIV_MUL");
-		actionSign.add("@DIV");     // 
-		actionSign.add("@MUL");		//
+		actionSign.add("@DIV"); 
+		actionSign.add("@MUL"); 
 		actionSign.add("@SINGLE");
 		actionSign.add("@SINGTLE_OP");
 		actionSign.add("@ASS_R");
@@ -59,16 +61,16 @@ public class AnalyseNode {
 	/**
 	 * 节点类型
 	 */
-	public String type;		
+	public String type;
 	/**
 	 * 节点名
 	 */
-	public String name;		
+	public String name;
 	/**
 	 * 节点值
 	 */
-	public String value;	
-	
+	public String value;
+
 	public AnalyseNode() {
 	}
 

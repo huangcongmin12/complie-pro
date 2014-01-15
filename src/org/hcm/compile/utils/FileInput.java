@@ -8,10 +8,11 @@ import java.io.InputStreamReader;
 
 /**
  * FileInput code
- *
+ * 
+ * @author HCM
  */
 public class FileInput {
-	
+
 	/**
 	 * 读取源文件
 	 * 

@@ -18,38 +18,74 @@ import org.hcm.compile.lexing.LexAnalyse;
 /**
  * 语法分析器
  * 
- * @author KB
+ * @author HCM
  * 
  */
 public class Parser {
 
 	/**
-	 * @param args
+	 * 词法分析器
 	 */
+	private LexAnalyse lexAnalyse;
+	/**
+	 * 单词表
+	 */
+	ArrayList<Word> wordList = new ArrayList<Word>();
+	/**
+	 * 分析栈
+	 */
+	Stack<AnalyseNode> analyseStack = new Stack<AnalyseNode>();
+	/**
+	 * 语义栈
+	 */
+	Stack<String> semanticStack = new Stack<String>();
+	/**
+	 * 四元式列表
+	 */
+	ArrayList<FourElement> fourElemList = new ArrayList<FourElement>();
+	/**
+	 * 错误信息列表
+	 */
+	ArrayList<Error> errorList = new ArrayList<Error>();
 
-	private LexAnalyse lexAnalyse;// 词法分析器
-	ArrayList<Word> wordList = new ArrayList<Word>();// 单词表
-	Stack<AnalyseNode> analyseStack = new Stack<AnalyseNode>();// 分析栈
-	Stack<String> semanticStack = new Stack<String>();// 语义栈
-	ArrayList<FourElement> fourElemList = new ArrayList<FourElement>();// 四元式列表
-	ArrayList<Error> errorList = new ArrayList<Error>();// 错误信息列表
-	StringBuffer bf;// 分析栈缓冲流
-	int errorCount = 0;// 统计错误个数
-	boolean graErrorFlag = false;// 语法分析出错标志
-	int tempCount = 0;// 用于生成临时变量
-	int fourElemCount = 0;// 统计四元式个数
+	/**
+	 * 分析栈缓冲流
+	 */
+	StringBuffer bf = null;
+	/**
+	 * 统计错误个数
+	 */
+	int errorCount = 0;
+	/**
+	 * 语法分析出错标志
+	 */
+	boolean graErrorFlag = false;
+	/**
+	 * 用于生成临时变量
+	 */
+	int tempCount = 0;
+	/**
+	 * 统计四元式个数
+	 */
+	int fourElemCount = 0;
+	/**
+	 * 当前栈顶元素
+	 */
+	AnalyseNode top;
+	/**
+	 * 待分析单词
+	 */
+	Word firstWord;
 	AnalyseNode S, B, A, C, X, Y, R, Z, Z1, U, U1, E, E1, H, H1, G, M, D, L, L1, T, T1, F, O, P, Q;
 	AnalyseNode ADD_SUB, DIV_MUL, ADD, SUB, DIV, MUL, ASS_F, ASS_R, ASS_Q, ASS_U, TRAN_LF;
 	AnalyseNode SINGLE, SINGLE_OP, EQ, EQ_U1, COMPARE, COMPARE_OP, IF_FJ, IF_RJ, IF_BACKPATCH_FJ, IF_BACKPATCH_RJ;
 	AnalyseNode WHILE_FJ, WHILE_RJ, WHILE_BACKPATCH_FJ, FOR_FJ, FOR_RJ, FOR_BACKPATCH_FJ;
-	AnalyseNode top;// 当前栈顶元素
-	Word firstWord;// 待分析单词
 	String OP = null;
 	String ARG1, ARG2, RES;
 	Error error;
-	// int if_fj,if_rj,while_fj,while_rj,for_fj,for_rj;
-	Stack<Integer> if_fj, if_rj, while_fj, while_rj, for_fj, for_rj;// if while
-																	// for 跳转地址栈
+	// if while
+	Stack<Integer> if_fj, if_rj, while_fj, while_rj, for_fj, for_rj;
+	// for 跳转地址栈
 	Stack<String> for_op = new Stack<String>();
 
 	public Parser() {
@@ -934,11 +970,6 @@ public class Parser {
 		pw1.close();
 
 		return path + "/FourElement.txt";
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

@@ -18,7 +18,7 @@ import org.hcm.compile.entity.Error;
 /**
  * 词法分析器
  * 
- * 
+ * @author HCM
  */
 public class LexAnalyse {
 

@@ -6,6 +6,11 @@ import org.hcm.compile.lexing.LexAnalyse;
 import org.hcm.compile.parsing.Parser;
 import org.hcm.compile.utils.FileInput;
 
+/**
+ * 
+ * @author HCM
+ *
+ */
 public class ocmpile {
 	public static void main(String[] args) throws IOException {
 		String fileName = "test00.c";
