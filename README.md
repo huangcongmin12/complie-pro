@@ -1,5 +1,3 @@
-complie-pro
-===========
 <h3>文法说明</h3>
 1、	文法开始：<br />
 S-&gt;void main(){A}<br />
