@@ -1,5 +1,6 @@
 complie-pro
 ===========
+<h3>文法说明</h3>
 1、	文法开始：<br />
 S-&gt;void main(){A}<br />
 2、	声明：<br />
@@ -97,11 +98,6 @@ B-&gt;if (G)@IF_FJ{A}@IF_BACKPATCH_FJ @IF_RJ else{A}@IF_BACKPATCH_RJ<br />
 B-&gt;while(G)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJ		{参照if else}<br />
 B-&gt;for(YZ;G@FOR_FJ;Q){A@SINGLE}@FOR_RJ@FOR_BACKPATCH_FJ			{参照if else }<br />
 @SINGLE	{ARG1=id;RES=NEWTEMP;New fourElement(OP,ARG1,/,RES)}<br />
-<br />
-<br />
-<br />
-<br />
-<br />
 <br />
 说明：<br />
 （1）、R.VAL表示符号R的值，VAL是R的一个属性，其它类似。<br />
