@@ -2,8 +2,8 @@ package org.hcm.compile.main;
 
 import java.io.IOException;
 
-import org.hcm.compile.Parsing.Parser;
 import org.hcm.compile.lexing.LexAnalyse;
+import org.hcm.compile.parsing.Parser;
 import org.hcm.compile.utils.FileInput;
 
 public class ocmpile {
